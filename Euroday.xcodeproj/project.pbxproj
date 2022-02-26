@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD0A6AE827C9ADE00024EEA1 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0A6AE727C9ADE00024EEA1 /* UILabel+Ext.swift */; };
 		BD5C9B0F27C9917900238E1A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5C9B0E27C9917900238E1A /* DetailViewController.swift */; };
+		BDCBF79B27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF79A27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel */; };
 		BDF8BF6527C98FC300D703C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8BF6427C98FC300D703C4 /* AppDelegate.swift */; };
 		BDF8BF6727C98FC300D703C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8BF6627C98FC300D703C4 /* SceneDelegate.swift */; };
 		BDF8BF6927C98FC300D703C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8BF6827C98FC300D703C4 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		BD0A6AE727C9ADE00024EEA1 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		BD5C9B0E27C9917900238E1A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BDCBF79A27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EurodayClassifier3.mlmodel; sourceTree = "<group>"; };
 		BDF8BF6127C98FC300D703C4 /* Euroday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Euroday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF8BF6427C98FC300D703C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDF8BF6627C98FC300D703C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				BDF8BF6F27C98FC400D703C4 /* LaunchScreen.storyboard */,
 				BDF8BF7227C98FC400D703C4 /* Info.plist */,
 				BD0A6AE727C9ADE00024EEA1 /* UILabel+Ext.swift */,
+				BDCBF79A27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel */,
 			);
 			path = Euroday;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF8BF6927C98FC300D703C4 /* ViewController.swift in Sources */,
+				BDCBF79B27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel in Sources */,
 				BDF8BF6527C98FC300D703C4 /* AppDelegate.swift in Sources */,
 				BDF8BF6727C98FC300D703C4 /* SceneDelegate.swift in Sources */,
 				BD5C9B0F27C9917900238E1A /* DetailViewController.swift in Sources */,
