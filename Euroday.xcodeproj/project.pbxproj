@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BD0A6AE827C9ADE00024EEA1 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0A6AE727C9ADE00024EEA1 /* UILabel+Ext.swift */; };
+		BD0B674327CB06BC009B353F /* EurodayClassifier5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BD0B674227CB06BC009B353F /* EurodayClassifier5.mlmodel */; };
 		BD5C9B0F27C9917900238E1A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5C9B0E27C9917900238E1A /* DetailViewController.swift */; };
-		BDCBF79B27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BDCBF79A27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel */; };
+		BDB42C0527CA940E000BAD73 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB42C0427CA940E000BAD73 /* Enum.swift */; };
+		BDB42C0727CA9B83000BAD73 /* EurodayClassifier5+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB42C0627CA9B83000BAD73 /* EurodayClassifier5+Ext.swift */; };
 		BDF8BF6527C98FC300D703C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8BF6427C98FC300D703C4 /* AppDelegate.swift */; };
 		BDF8BF6727C98FC300D703C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8BF6627C98FC300D703C4 /* SceneDelegate.swift */; };
 		BDF8BF6927C98FC300D703C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8BF6827C98FC300D703C4 /* ViewController.swift */; };
@@ -19,8 +21,10 @@
 
 /* Begin PBXFileReference section */
 		BD0A6AE727C9ADE00024EEA1 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		BD0B674227CB06BC009B353F /* EurodayClassifier5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EurodayClassifier5.mlmodel; sourceTree = "<group>"; };
 		BD5C9B0E27C9917900238E1A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		BDCBF79A27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EurodayClassifier3.mlmodel; sourceTree = "<group>"; };
+		BDB42C0427CA940E000BAD73 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		BDB42C0627CA9B83000BAD73 /* EurodayClassifier5+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EurodayClassifier5+Ext.swift"; sourceTree = "<group>"; };
 		BDF8BF6127C98FC300D703C4 /* Euroday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Euroday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF8BF6427C98FC300D703C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDF8BF6627C98FC300D703C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD68D48E27CF9FB900E5DAE7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD0A6AE727C9ADE00024EEA1 /* UILabel+Ext.swift */,
+				BDB42C0627CA9B83000BAD73 /* EurodayClassifier5+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BDF8BF5827C98FC300D703C4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +73,16 @@
 		BDF8BF6327C98FC300D703C4 /* Euroday */ = {
 			isa = PBXGroup;
 			children = (
+				BD68D48E27CF9FB900E5DAE7 /* Extensions */,
 				BDF8BF6427C98FC300D703C4 /* AppDelegate.swift */,
 				BDF8BF6627C98FC300D703C4 /* SceneDelegate.swift */,
 				BDF8BF6827C98FC300D703C4 /* ViewController.swift */,
 				BD5C9B0E27C9917900238E1A /* DetailViewController.swift */,
-				BDF8BF6D27C98FC400D703C4 /* Assets.xcassets */,
+				BDB42C0427CA940E000BAD73 /* Enum.swift */,
+				BD0B674227CB06BC009B353F /* EurodayClassifier5.mlmodel */,
 				BDF8BF6F27C98FC400D703C4 /* LaunchScreen.storyboard */,
+				BDF8BF6D27C98FC400D703C4 /* Assets.xcassets */,
 				BDF8BF7227C98FC400D703C4 /* Info.plist */,
-				BD0A6AE727C9ADE00024EEA1 /* UILabel+Ext.swift */,
-				BDCBF79A27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel */,
 			);
 			path = Euroday;
 			sourceTree = "<group>";
@@ -144,9 +158,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF8BF6927C98FC300D703C4 /* ViewController.swift in Sources */,
-				BDCBF79B27CA5FFF006E5C25 /* EurodayClassifier3.mlmodel in Sources */,
 				BDF8BF6527C98FC300D703C4 /* AppDelegate.swift in Sources */,
 				BDF8BF6727C98FC300D703C4 /* SceneDelegate.swift in Sources */,
+				BDB42C0727CA9B83000BAD73 /* EurodayClassifier5+Ext.swift in Sources */,
+				BDB42C0527CA940E000BAD73 /* Enum.swift in Sources */,
+				BD0B674327CB06BC009B353F /* EurodayClassifier5.mlmodel in Sources */,
 				BD5C9B0F27C9917900238E1A /* DetailViewController.swift in Sources */,
 				BD0A6AE827C9ADE00024EEA1 /* UILabel+Ext.swift in Sources */,
 			);

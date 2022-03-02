@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "placeholder-light.png",
+      "filename" : "Germany50_tp_black.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "placeholder-dark.png",
+      "filename" : "Germany50_tp_white.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

@@ -6,6 +6,8 @@
 //
 
 import AVFoundation
+import CoreML
+import Vision
 import UIKit
 
 
@@ -81,7 +83,9 @@ class ViewController: UIViewController {
                 session.startRunning()
                 self.session = session
             }
-            catch { print(error) }
+            catch {
+                print(error)
+            }
         }
     }
     
@@ -89,8 +93,8 @@ class ViewController: UIViewController {
     @objc private func didTapTakePhoto() {
         output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
         
-        let vc = DetailViewController()
-        DispatchQueue.main.async { self.present(vc, animated: true) }
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
 }
 
@@ -102,11 +106,59 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
         }
         let image = UIImage(data: data)
         
-        session?.stopRunning()
+        if let image = image {
+            startML(for: image)
+        }
+    }
+    
+    
+    private func startML(for image: UIImage) {
         
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFill
-        imageView.frame = view.bounds
-        view.addSubview(imageView)
+        guard let ciimage = CIImage(image: image) else {
+            fatalError("Could not convert to CIImage")
+        }
+        
+        detect(image: ciimage)
+    }
+    
+    
+    func detect(image: CIImage) {
+        
+        guard let model = try? VNCoreMLModel(for: EurodayClassifier5(()).model) else { return }
+        
+        let request = VNCoreMLRequest(model: model) { request, error in
+            guard let results = request.results as? [VNClassificationObservation] else {
+                fatalError("Model failed to process image")
+            }
+            
+            if let firstResult = results.first {
+                switch firstResult.identifier {
+                case "france6":
+                    self.showCountry(name: .france)
+                case "finland6":
+                    self.showCountry(name: .finland)
+                case "germany6":
+                    self.showCountry(name: .germany)
+                default:
+                    break
+                }
+            }
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        
+        do {
+            try handler.perform([request])
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    
+    func showCountry(name: Country) {
+        let vc = DetailViewController()
+        vc.country = name
+        DispatchQueue.main.async { self.present(vc, animated: true) }
     }
 }

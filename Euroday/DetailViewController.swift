@@ -7,14 +7,16 @@
 
 import UIKit
 
+
 class DetailViewController: UIViewController {
 
     // Declaration
     let textLabel = UILabel()
     let textHeader = "Hurray! It is "
-    let countryName = "Italy"
+    var countryName: String!
     var imageView = UIImageView()
     var button = UIButton()
+    var country: Country!
     
     // Screen is loaded and ready to appear
     override func viewDidLoad() {
@@ -33,13 +35,24 @@ class DetailViewController: UIViewController {
             itemsView.translatesAutoresizingMaskIntoConstraints = false
         }
         
+        switch country {
+        case .france:
+            imageView.image = UIImage(named: "france")
+            countryName = "France"
+        case .germany:
+            imageView.image = UIImage(named: "germany-yellow")
+            countryName = "Germany"
+        case .finland:
+            imageView.image = UIImage(named: "finland")
+            countryName = "Finland"
+        default:
+            break
+        }
         
         textLabel.text = textHeader + countryName
-        textLabel.font = UIFont.systemFont(ofSize: 32, weight: UIFont.Weight.bold)
+        textLabel.numberOfLines = 0
+        textLabel.font = UIFont.systemFont(ofSize: 38, weight: UIFont.Weight.bold)
         textLabel.set(textColor: .systemBlue, range: NSMakeRange(textHeader.count, countryName.count))
-        
-        
-        imageView.image = UIImage(named: "placeholder-light")
         
         
         button.setTitle("Done", for: .normal)
@@ -49,11 +62,15 @@ class DetailViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -180),
+            textLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -210),
+            textLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 45),
+            textLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -45),
   
             
-            imageView.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 100),
+            imageView.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 40),
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 200),
+            imageView.heightAnchor.constraint(equalToConstant: 200),
             
             
             button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor , constant: -padding),
